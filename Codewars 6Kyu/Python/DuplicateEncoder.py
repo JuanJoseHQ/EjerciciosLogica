@@ -1,0 +1,37 @@
+"""
+The goal of this exercise is to convert a string to a new string where each character in the new
+string is "(" if that character appears only once in the original string, or ")" if that character
+appears more than once in the original string. Ignore capitalization when determining if a 
+character is a duplicate.
+
+Examples
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))((" 
+"""
+
+def duplicate_encode(word):
+    cant = 0
+    str_ = ""
+    for x in word.lower():
+        for y in word.lower():
+            if(x == y):
+                cant += 1
+        if(cant > 1):
+            str_ += ")"
+        else:
+            str_ += "("
+        cant = 0
+    return str_
+
+def duplicate_encode(word):
+    word = word.upper()
+    result = ""
+    for char in word:
+        if word.count(char) > 1:
+            result += ")"
+        else:
+            result += "("
+            
+    return result
